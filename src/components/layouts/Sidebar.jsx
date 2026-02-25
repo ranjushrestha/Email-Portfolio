@@ -40,7 +40,7 @@ const Sidebar = ({ active }) => {
       <header className="lg:hidden fixed top-0 left-0 w-full bg-gray-700 text-white flex items-center justify-between px-4 py-2 shadow-md z-50">
         <a href="#ABOUT">
           <img
-            src={logo}
+            src={profile}
             alt="logo"
             className="w-12 h-12 object-cover rounded-full border-4 border-gray-400"
           />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/profile.png";
+import profile from "../../assets/profile.png";
 
 const Sidebar = ({ active }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Sidebar = ({ active }) => {
         <div className="flex flex-col items-center mt-15 text-center">
           <a href="#ABOUT">
             <img
-              src={logo}
+              src={profile}
               alt="logo"
               className="w-40 h-40 object-cover rounded-full mb-1 border-6 border-gray-400 shadow-md cursor-pointer"
             />

@@ -9,28 +9,28 @@ const Sidebar = ({ active }) => {
     <>
       {/* Large Screen Sidebar */}
       <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-70 bg-gray-700 text-white p-5 flex-col pt-4">
-        <div className="flex flex-col items-center mb-5 text-center">
+        <div className="flex flex-col items-center mt-15 text-center">
           <a href="#ABOUT">
             <img
               src={logo}
               alt="logo"
-              className="w-44 h-44 object-cover rounded-full mb-1 border-8 border-gray-400 shadow-md cursor-pointer"
+              className="w-40 h-40 object-cover rounded-full mb-1 border-6 border-gray-400 shadow-md cursor-pointer"
             />
           </a>
         </div>
 
-        <nav className="flex flex-col gap-2 mt-6">
+        <nav className="flex flex-col gap-1 mt-6">
           {sections.map((section) => (
             <a
               key={section}
               href={`#${section}`}
               className={`flex items-center justify-center text-gray-400 px-4 py-2 rounded cursor-pointer transition-colors ${
                 active === section
-                  ? "bg-gray-500 text-white font-bold"
+                  ? " text-white font-bold"
                   : "hover:bg-gray-500/30"
               }`}
             >
-              {section}
+              <p className="font-bold">{section}</p>
             </a>
           ))}
         </nav>
@@ -87,7 +87,7 @@ const Sidebar = ({ active }) => {
               onClick={() => setIsOpen(false)}
               className={`px-4 py-2 rounded cursor-pointer transition-colors ${
                 active === section
-                  ? "bg-gray-500 text-white font-bold"
+                  ? " text-white font-bold"
                   : "hover:bg-gray-500/30"
               }`}
             >

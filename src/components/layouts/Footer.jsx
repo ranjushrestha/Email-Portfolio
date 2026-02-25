@@ -1,8 +1,9 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 shrink-0 text-black p-4 text-center mt-auto">
-      © 2025 RestroAdmin. All rights reserved.
+    <footer className="bg-gray-200 shrink-0 text-gray-500 p-4 text-center mt-auto">
+     © 2026 Raju Shrestha - Email Outreach Specialist
+     <p className="text-xs text-gray-400">Helping B2B companies scale with data-driven cold email systems</p>
     </footer>
   );
 };

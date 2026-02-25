@@ -12,9 +12,28 @@ import Contact from "../pages/Contact";
 const sections = ["ABOUT", "SKILLS", "TOOLS", "SERVICES", "RESULTS", "CONTACT"];
 
 const ScrollSpy = () => {
-  const [active, setActive] = useState(sections[0]);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
+    const handleInitialActive = () => {
+      // Check which section is currently in view on load
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            setActive(section);
+            break;
+          }
+        }
+      }
+    };
+
+    handleInitialActive();
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,7 +46,7 @@ const ScrollSpy = () => {
         root: null,
         rootMargin: "0px",
         threshold: 0.6,
-      }
+      },
     );
 
     sections.forEach((section) => {
@@ -35,17 +54,12 @@ const ScrollSpy = () => {
       if (el) observer.observe(el);
     });
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">
-      {/* Sidebar */}
       <Sidebar active={active} />
-
-      {/* Main Content */}
       <div className="flex-1 bg-gray-100 lg:ml-70">
         <main className="grow overflow-auto">
           <section id="ABOUT" className="min-h-screen p-8">
@@ -67,7 +81,6 @@ const ScrollSpy = () => {
             <Contact />
           </section>
         </main>
-
         <Footer />
       </div>
     </div>

@@ -68,7 +68,7 @@ const Results = () => {
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
-            className={`bg-gray-300/50 rounded-2xl border border-gray-500 p-6 min-h-[10rem] 
+            className={`bg-gray-300/50 rounded-2xl border border-gray-500 p-6 min-h-[12rem] 
               flex flex-col justify-center items-center w-full max-w-xs transition-transform duration-700 
               ease-out ${
               visible[index]
@@ -81,7 +81,7 @@ const Results = () => {
               alt={`${card.title} icon`}
               className="w-10 h-10 mb-3"
             />
-            <h3 className="text-2xl font-semibold mb-2 lg:text-5xl lg:font-bold">
+            <h3 className="text-2xl font-semibold mb-2 lg:text-4xl lg:font-bold">
               {card.title}
             </h3>
             <p className="text-gray-700 font-semibold text-center break-words">

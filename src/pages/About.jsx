@@ -14,7 +14,7 @@ const About = () => {
         <span className="mx-2 relative -top-0.5">•</span>
         <a
           href="mailto:shrestharaju160@gmail.com"
-          className="text-amber-900 text-base hover:underline break-all"
+          className="text-amber-900 text-base hover:underline "
         >
           SHRESTHARAJU16060@GMAIL.COM
         </a>

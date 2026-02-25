@@ -6,15 +6,13 @@ const ContactForm = () => {
   const [status, setStatus] = useState("");
   const [sending, setSending] = useState(false);
 
-  // Validation rules
   const validations = {
     fullName: {
       required: true,
       message: "Full Name is required",
       validate: (value) => ({
         requirement: /^[A-Za-z\s]{3,}$/.test(value.trim()),
-        message:
-          "Full Name must be at least 3 letters.",
+        message: "Full Name must be at least 3 letters.",
       }),
     },
     email: {
@@ -50,12 +48,7 @@ const ContactForm = () => {
     setStatus("Sending… Please wait");
 
     emailjs
-      .send(
-        "service_2nt3qim",
-        "template_bvdcly9",
-        data,
-        "LpHjbhNZFWTD7fl6K"
-      )
+      .send("service_2nt3qim", "template_bvdcly9", data, "LpHjbhNZFWTD7fl6K")
       .then(() => {
         setStatus("Message sent successfully!");
         setSending(false);
@@ -73,23 +66,23 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="mt-5 ml-6 mr-20 flex justify-start">
-      <div>
-        <h2 className="text-5xl font-bold mb-5 text-gray-600">
-          Let's Work Together
-        </h2>
-        <p className="font-semibold text-gray-500">
+   <div className="mt-5 px-4 sm:px-6 lg:px-20 flex justify-center sm:justify-start">
+  <div className="w-full lg:w-auto max-w-full">
+       <h2 className="text-5xl lg:text-5xl font-bold mb-5 text-gray-600 text-center sm:text-left w-full">
+  Let's Work Together
+</h2>
+        <p className="font-semibold mb-15 text-gray-500 text-center sm:text-left">
           Ready to scale your outreach and generate qualified leads on autopilot?
         </p>
 
         <form
           onSubmit={handleSubmit(sendEmail)}
-           noValidate
+          noValidate
           className="max-w-sm mt-10 p-6 rounded space-y-3"
         >
           {status && (
             <p
-              className={`mb-4 ${
+              className={`mb-4 text-center ${
                 status.includes("success")
                   ? "text-green-600"
                   : status.includes("offline")
@@ -139,7 +132,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={sending}
-            className="w-full bg-gray-600 text-white p-3 rounded-2xl hover:bg-gray-700 disabled:opacity-50 flex items-center justify-center"
+            className="w-full min-w-[200px] bg-gray-600 text-white p-3 rounded-2xl hover:bg-gray-700 disabled:opacity-50 flex items-center justify-center"
           >
             {sending ? "Sending… Please wait" : "Let's Scale Your Outreach"}
           </button>

@@ -19,8 +19,9 @@ const ContactForm = () => {
       required: true,
       message: "Email is required",
       validate: (value) => ({
-        requirement:
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
+        requirement: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+          value,
+        ),
         message: "Email is invalid.",
       }),
     },
@@ -34,7 +35,7 @@ const ContactForm = () => {
     },
   };
 
-  const { formData, errors, handleChange, handleSubmit } = useForm({
+  const { formData, errors, handleChange, handleSubmit, reset } = useForm({
     defaultValues: {
       fullName: "",
       email: "",
@@ -50,14 +51,16 @@ const ContactForm = () => {
     emailjs
       .send("service_2nt3qim", "template_bvdcly9", data, "LpHjbhNZFWTD7fl6K")
       .then(() => {
-        setStatus("Message sent successfully!");
         setSending(false);
+        setStatus("Message sent successfully!");
+        setTimeout(() => {
+          setStatus("");
+          reset();
+        }, 3000);
       })
       .catch(() => {
         if (!navigator.onLine) {
-          setStatus(
-            "You are offline. Please check your internet connection."
-          );
+          setStatus("You are offline. Please check your internet connection.");
         } else {
           setStatus("Failed to send message. Please try again.");
         }
@@ -66,18 +69,19 @@ const ContactForm = () => {
   };
 
   return (
-   <div className="mt-10 px-4 sm:px-6 lg:px-20 flex justify-center sm:justify-start">
-  <div className="w-full lg:w-auto max-w-full">
-       <h2 className="text-4xl lg:text-5xl font-bold mb-5 text-gray-600 text-center sm:text-left w-full">
-  Let's Work Together
-</h2>
+    <div className="mt-10 px-4 sm:px-6 lg:px-20 flex justify-center sm:justify-start">
+      <div className="w-full lg:w-auto max-w-full">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-5 text-gray-600 text-center sm:text-left w-full">
+          Let's Work Together
+        </h2>
         <p className="font-semibold mb-15 text-gray-500 text-center sm:text-left">
-          Ready to scale your outreach and generate qualified leads on autopilot?
+          Ready to scale your outreach and generate qualified leads on
+          autopilot?
         </p>
 
         <form
           onSubmit={handleSubmit(sendEmail)}
-
+          noValidate
           className="max-w-sm mt-10 p-6 rounded space-y-3"
         >
           {status && (
@@ -86,8 +90,8 @@ const ContactForm = () => {
                 status.includes("success")
                   ? "text-green-600"
                   : status.includes("offline")
-                  ? "text-yellow-600"
-                  : "text-red-600"
+                    ? "text-yellow-600"
+                    : "text-red-600"
               }`}
             >
               {status}
@@ -112,7 +116,6 @@ const ContactForm = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            onInvalid={(e) => e.preventDefault()}
             className="w-full p-2 border-b-2 border-gray-400 focus:border-gray-600 outline-none"
           />
           {errors.email && (

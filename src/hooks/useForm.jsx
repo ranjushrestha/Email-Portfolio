@@ -52,7 +52,13 @@ const useForm = ({ defaultValues = {}, validations = {} } = {}) => {
     }
   };
 
-  return { formData, errors, handleChange, handleSubmit };
+  function reset() {
+    setFormData(defaultValues)
+    setErrors({})
+    setIsSubmitted(false)
+  }
+
+  return { formData, errors, handleChange, handleSubmit, reset };
 };
 
 export default useForm;

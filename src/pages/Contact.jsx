@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import useForm from "../hooks/useForm";
 
@@ -20,7 +20,7 @@ const ContactForm = () => {
       message: "Email is required",
       validate: (value) => ({
         requirement: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-          value,
+          value
         ),
         message: "Email is invalid.",
       }),
@@ -44,6 +44,17 @@ const ContactForm = () => {
     validations,
   });
 
+  
+  useEffect(() => {
+    const handleOnline = () => {
+      if (status.includes("offline")) {
+        setStatus(""); 
+      }
+    };
+    window.addEventListener("online", handleOnline);
+    return () => window.removeEventListener("online", handleOnline);
+  }, [status]);
+
   const sendEmail = (data) => {
     setSending(true);
     setStatus("Sending… Please wait");
@@ -63,8 +74,10 @@ const ContactForm = () => {
           setStatus("You are offline. Please check your internet connection.");
         } else {
           setStatus("Failed to send message. Please try again.");
+           setTimeout(() => setStatus(""), 3000);
         }
         setSending(false);
+        
       });
   };
 
@@ -75,8 +88,7 @@ const ContactForm = () => {
           Let's Work Together
         </h2>
         <p className="font-semibold mb-15 text-gray-500 text-center sm:text-left">
-          Ready to scale your outreach and generate qualified leads on
-          autopilot?
+          Ready to scale your outreach and generate qualified leads on autopilot?
         </p>
 
         <form
@@ -90,8 +102,8 @@ const ContactForm = () => {
                 status.includes("success")
                   ? "text-green-600"
                   : status.includes("offline")
-                    ? "text-yellow-600"
-                    : "text-red-600"
+                  ? "text-yellow-600"
+                  : "text-red-600"
               }`}
             >
               {status}

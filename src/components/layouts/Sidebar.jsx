@@ -6,7 +6,7 @@ const Sidebar = ({ active }) => {
   const sections = ["ABOUT", "SKILLS", "TOOLS", "SERVICES", "RESULTS", "CONTACT"];
 
   const handleScroll = (section) => {
-    const el = document.getElementById(section.toLowerCase()); // lowercase IDs
+    const el = document.getElementById(section.toLowerCase()); 
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -35,7 +35,7 @@ const Sidebar = ({ active }) => {
           {sections.map((section) => (
             <a
               key={section}
-              href={`#${section.toLowerCase()}`}
+              href={`#${section}`}
               onClick={(e) => {
                 e.preventDefault();
                 handleScroll(section);
@@ -105,7 +105,7 @@ const Sidebar = ({ active }) => {
           {sections.map((section) => (
             <a
               key={section}
-              href={`#${section.toLowerCase()}`}
+              href={`#${section}`}
               onClick={(e) => {
                 e.preventDefault();
                 handleScroll(section);

@@ -66,9 +66,9 @@ const ContactForm = () => {
   };
 
   return (
-   <div className="mt-5 px-4 sm:px-6 lg:px-20 flex justify-center sm:justify-start">
+   <div className="mt-10 px-4 sm:px-6 lg:px-20 flex justify-center sm:justify-start">
   <div className="w-full lg:w-auto max-w-full">
-       <h2 className="text-5xl lg:text-5xl font-bold mb-5 text-gray-600 text-center sm:text-left w-full">
+       <h2 className="text-4xl lg:text-5xl font-bold mb-5 text-gray-600 text-center sm:text-left w-full">
   Let's Work Together
 </h2>
         <p className="font-semibold mb-15 text-gray-500 text-center sm:text-left">
@@ -77,7 +77,7 @@ const ContactForm = () => {
 
         <form
           onSubmit={handleSubmit(sendEmail)}
-          noValidate
+
           className="max-w-sm mt-10 p-6 rounded space-y-3"
         >
           {status && (
@@ -112,6 +112,7 @@ const ContactForm = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
+            onInvalid={(e) => e.preventDefault()}
             className="w-full p-2 border-b-2 border-gray-400 focus:border-gray-600 outline-none"
           />
           {errors.email && (

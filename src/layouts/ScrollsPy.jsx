@@ -39,20 +39,22 @@ const ScrollSpy = () => {
 
     handleInitialActive();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.6,
-      },
-    );
+   const isMobile = window.innerWidth < 1024; // lg breakpoint
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActive(entry.target.id);
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: isMobile ? "-20% 0px -20% 0px" : "0px",
+    threshold: isMobile ? 0 : 0.5,
+  }
+);
 
     sections.forEach((section) => {
       const el = document.getElementById(section);

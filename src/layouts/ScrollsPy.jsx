@@ -9,7 +9,12 @@ import Services from "../pages/Services";
 import Results from "../pages/Results";
 import Contact from "../pages/Contact";
 
-const sections = ["ABOUT", "SKILLS", "TOOLS", "SERVICES", "RESULTS", "CONTACT"];
+const sections = ["about",
+    "skills",
+    "tools",
+    "services",
+    "results",
+    "contact",];
 
 const ScrollSpy = () => {
   const [active, setActive] = useState("");
@@ -62,22 +67,22 @@ const ScrollSpy = () => {
       <Sidebar active={active} />
       <div className="flex-1 bg-gray-100 lg:ml-70">
         <main className="grow overflow-auto">
-          <section id="ABOUT" className="min-h-screen p-8">
+          <section id="about" className="min-h-screen p-8">
             <About />
           </section>
-          <section id="SKILLS" className="min-h-screen p-8">
+          <section id="skills" className="min-h-screen p-8">
             <Skills />
           </section>
-          <section id="TOOLS" className="min-h-screen p-8">
+          <section id="tools" className="min-h-screen p-8">
             <Tools />
           </section>
-          <section id="SERVICES" className="min-h-screen bg-[#b0b8c1] p-8">
+          <section id="services" className="min-h-screen bg-[#b0b8c1] p-8">
             <Services />
           </section>
-          <section id="RESULTS" className="min-h-screen p-8">
+          <section id="results" className="min-h-screen p-8">
             <Results />
           </section>
-          <section id="CONTACT" className="min-h-screen p-8">
+          <section id="contact" className="min-h-screen p-8">
             <Contact />
           </section>
         </main>

@@ -5,16 +5,28 @@ const Sidebar = ({ active }) => {
   const [isOpen, setIsOpen] = useState(false);
   const sections = ["ABOUT", "SKILLS", "TOOLS", "SERVICES", "RESULTS", "CONTACT"];
 
+  const handleScroll = (section) => {
+    const el = document.getElementById(section.toLowerCase()); // lowercase IDs
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
       {/* Large Screen Sidebar */}
       <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-70 bg-gray-700 text-white p-5 flex-col pt-4">
-        <div className="flex flex-col items-center mt-15 text-center">
-          <a href="#ABOUT">
+        <div className="flex flex-col items-center mt-12 text-center">
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScroll("ABOUT");
+            }}
+            className="cursor-pointer"
+          >
             <img
               src={profile}
               alt="logo"
-              className="w-40 h-40 object-cover rounded-full mb-1 border-6 border-gray-400 shadow-md cursor-pointer"
+              className="w-40 h-40 object-cover rounded-full mb-1 border-4 border-gray-400 shadow-md"
             />
           </a>
         </div>
@@ -23,10 +35,14 @@ const Sidebar = ({ active }) => {
           {sections.map((section) => (
             <a
               key={section}
-              href={`#${section}`}
+              href={`#${section.toLowerCase()}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll(section);
+              }}
               className={`flex items-center justify-center text-gray-400 px-4 py-2 rounded cursor-pointer transition-colors ${
-                active === section
-                  ? " text-white font-bold"
+                active.toUpperCase() === section
+                  ? "text-white font-bold"
                   : "hover:bg-gray-500/30"
               }`}
             >
@@ -38,7 +54,13 @@ const Sidebar = ({ active }) => {
 
       {/* Mobile/Tablet Header */}
       <header className="lg:hidden fixed top-0 left-0 w-full bg-gray-700 text-white flex items-center justify-between px-4 py-2 shadow-md z-50">
-        <a href="#ABOUT">
+        <a
+          href="#about"
+          onClick={(e) => {
+            e.preventDefault();
+            handleScroll("ABOUT");
+          }}
+        >
           <img
             src={profile}
             alt="logo"
@@ -83,11 +105,15 @@ const Sidebar = ({ active }) => {
           {sections.map((section) => (
             <a
               key={section}
-              href={`#${section}`}
-              onClick={() => setIsOpen(false)}
+              href={`#${section.toLowerCase()}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll(section);
+                setIsOpen(false); // close mobile menu
+              }}
               className={`px-4 py-2 rounded cursor-pointer transition-colors ${
-                active === section
-                  ? " text-white font-bold"
+                active.toUpperCase() === section
+                  ? "text-white font-bold"
                   : "hover:bg-gray-500/30"
               }`}
             >

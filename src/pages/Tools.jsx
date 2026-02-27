@@ -23,7 +23,7 @@ const Tools = () => {
         {tools.map((tool, index) => (
           <div key={index} className="flex flex-col items-center">
             {/* Circle Image */}
-            <div className="w-28 h-28  lg:w-32 lg:h-32 rounded-full flex items-center justify-center overflow-hidden shadow-md hover:scale-105 transition-transform duration-500 ease-in-out">
+            <div className="w-28 h-28  lg:w-32 lg:h-32 rounded-full flex items-center justify-center overflow-hidden  hover:scale-105 transition-transform duration-500 ease-in-out">
               <img
                 src={tool}
                 alt={titles[index]}

@@ -75,7 +75,7 @@ const observer = new IntersectionObserver(
           <section id="skills" className="min-h-screen p-8">
             <Skills />
           </section>
-          <section id="tools" className="min-h-screen p-8">
+          <section id="tools" className="min-h-screen bg-white p-8">
             <Tools />
           </section>
           <section id="services" className="min-h-screen bg-[#b0b8c1] p-8">

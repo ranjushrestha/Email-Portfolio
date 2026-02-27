@@ -1,13 +1,13 @@
 import React from "react";
+import instantly from "../assets/instantly.png";
+import smartlead from "../assets/smartlead.png";
+import lemlist from "../assets/lemlist.png";
+import googleWorkspace from "../assets/googleWorkspace.png";
+import M365 from "../assets/M365.png";
 
 const Tools = () => {
-  const tools = [
-    "Instantly",
-    "Smartlead",
-    "Lemlist",
-    "Google Workspace",
-    "Microsoft 365",
-  ];
+  const tools = [instantly, smartlead, lemlist, googleWorkspace, M365];
+  const titles = ['Instantly', 'Smartlead', 'Lemlist', 'Google Workspace', 'Microsoft 365'];
 
   return (
     <div className="mt-10 px-4 sm:px-6 lg:px-20">
@@ -19,21 +19,19 @@ const Tools = () => {
       </p>
 
       {/* Grid container */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 justify-items-center">
         {tools.map((tool, index) => (
-          <div
-            key={index}
-            className="
-              bg-gray-200 border-4 border-gray-500 
-              w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 
-              rounded-full shadow-md 
-              hover:scale-105 transition-transform duration-500 ease-in-out 
-              cursor-pointer flex items-center justify-center p-2
-            "
-          >
-            <p className="font-semibold text-gray-700 text-center text-sm sm:text-base md:text-lg break-words">
-              {tool}
-            </p>
+          <div key={index} className="flex flex-col items-center">
+            {/* Circle Image */}
+            <div className="w-28 h-28  lg:w-32 lg:h-32 rounded-full flex items-center justify-center overflow-hidden shadow-md hover:scale-105 transition-transform duration-500 ease-in-out">
+              <img
+                src={tool}
+                alt={titles[index]}
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            {/* Title below image */}
+            <p className="mt-2 text-center text-gray-600 text-sm font-semibold">{titles[index]}</p>
           </div>
         ))}
       </div>

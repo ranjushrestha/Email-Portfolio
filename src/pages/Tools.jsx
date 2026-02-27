@@ -31,7 +31,7 @@ const Tools = () => {
               />
             </div>
             {/* Title below image */}
-            <p className="mt-2 text-center text-gray-600 text-sm font-semibold">{titles[index]}</p>
+            <p className="mt-1 text-center text-gray-600 text-sm font-semibold">{titles[index]}</p>
           </div>
         ))}
       </div>

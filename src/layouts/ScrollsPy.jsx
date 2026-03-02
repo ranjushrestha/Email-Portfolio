@@ -9,52 +9,28 @@ import Services from "../pages/Services";
 import Results from "../pages/Results";
 import Contact from "../pages/Contact";
 
-const sections = ["about",
-    "skills",
-    "tools",
-    "services",
-    "results",
-    "contact",];
+const sections = ["about", "skills", "tools", "services", "results", "contact"];
 
 const ScrollSpy = () => {
   const [active, setActive] = useState("");
 
   useEffect(() => {
-    const handleInitialActive = () => {
-      // Check which section is currently in view on load
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          ) {
-            setActive(section);
-            break;
+    const isMobile = window.innerWidth < 1024; // lg breakpoint
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
           }
-        }
-      }
-    };
-
-    handleInitialActive();
-
-   const isMobile = window.innerWidth < 1024; // lg breakpoint
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActive(entry.target.id);
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: isMobile ? "-20% 0px -20% 0px" : "0px",
-    threshold: isMobile ? 0 : 0.5,
-  }
-);
+        });
+      },
+      {
+        root: null,
+        rootMargin: isMobile ? "-20% 0px -20% 0px" : "0px",
+        threshold: isMobile ? 0 : 0.5,
+      },
+    );
 
     sections.forEach((section) => {
       const el = document.getElementById(section);

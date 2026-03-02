@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 const Results = () => {
   const cardsData = [
@@ -25,20 +25,17 @@ const Results = () => {
   ];
 
   const cardRefs = useRef([]);
-  const [visible, setVisible] = useState([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries, observerInstance) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = entry.target.dataset.index;
-            setVisible((prev) => {
-              const updated = [...prev];
-              updated[index] = true;
-              return updated;
-            });
-            observer.unobserve(entry.target);
+            // Add animation classes directly
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+
+            observerInstance.unobserve(entry.target);
           }
         });
       },
@@ -57,24 +54,20 @@ const Results = () => {
       <h2 className="text-4xl font-bold mb-5 text-gray-600 text-center sm:text-left sm:text-5xl">
         Results That Matter
       </h2>
+
       <p className="font-semibold mb-10 text-gray-500 text-center sm:text-left">
         Proven track record of delivering high-performance email campaigns
       </p>
 
-      {/* Grid: 2 cols on mobile, 4 cols on md and up */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
         {cardsData.map((card, index) => (
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            data-index={index}
-            className={`bg-gray-300/50 rounded-2xl border border-gray-500 p-6 min-h-[12rem] 
-              flex flex-col justify-center items-center w-full max-w-xs transition-transform duration-700 
-              ease-out ${
-              visible[index]
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
+            className="bg-gray-300/50 rounded-2xl border border-gray-500 p-6 
+              min-h-[12rem] flex flex-col justify-center items-center 
+              w-full max-w-xs transition-all duration-700 ease-out
+              opacity-0 translate-y-10"
           >
             <img
               src={card.icon}

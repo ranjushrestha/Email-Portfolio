@@ -75,7 +75,7 @@ const Sidebar = ({ active }) => {
           />
         </a>
 
-        <h3 className="text-2xl text-gray-100  tracking-wide">RAJU SHRESTHA</h3>
+        <h3 className="text-2xl text-gray-300 font-semibold tracking-wide">RAJU SHRESTHA</h3>
         {/* Hamburger Menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}

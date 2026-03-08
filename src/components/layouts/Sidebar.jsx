@@ -109,7 +109,7 @@ const Sidebar = ({ active }) => {
               onClick={(e) => {
                 e.preventDefault();
                 handleScroll(section);
-                setIsOpen(false); // close mobile menu
+                setIsOpen(false); 
               }}
               className={`px-4 py-2 rounded cursor-pointer transition-colors ${
                 active.toUpperCase() === section

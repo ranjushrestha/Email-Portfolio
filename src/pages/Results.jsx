@@ -50,8 +50,8 @@ const Results = () => {
   }, []);
 
   return (
-    <div className="mt-10 px-4 lg:mt-4  ">
-      <h2 className="text-4xl font-semibold mb-5 text-gray-900 text-center sm:text-left sm:text-5xl">
+    <div className="mt-10 px-4 lg:mt-4 lg:ml-8 ">
+      <h2 className="text-4xl font-semibold mb-5 text-gray-700 text-center sm:text-left sm:text-5xl">
         RESULTS THAT MATTER
       </h2>
 

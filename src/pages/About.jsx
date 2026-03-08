@@ -48,7 +48,7 @@ const About = ({ data = aboutData }) => {
   return (
     <div className="mt-10 px-4 lg:mt-4 lg:ml-8">
       {/* Heading */}
-      <h2 className="hidden sm:block lg:block text-4xl sm:text-7xl text-gray-700 font-semibold text-center sm:text-left">
+      <h2 className="hidden  sm:block sm:block lg:block text-4xl sm:text-7xl text-gray-700 font-semibold text-center sm:text-left lg:text-left">
         {" "}
         {data.name}
       </h2>

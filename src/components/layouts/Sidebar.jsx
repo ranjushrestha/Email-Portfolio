@@ -3,10 +3,17 @@ import profile from "../../assets/profile.png";
 
 const Sidebar = ({ active }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const sections = ["ABOUT", "SKILLS", "TOOLS", "SERVICES", "RESULTS", "CONTACT"];
+  const sections = [
+    "ABOUT",
+    "SKILLS",
+    "TOOLS",
+    "SERVICES",
+    "RESULTS",
+    "CONTACT",
+  ];
 
   const handleScroll = (section) => {
-    const el = document.getElementById(section.toLowerCase()); 
+    const el = document.getElementById(section.toLowerCase());
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -68,6 +75,7 @@ const Sidebar = ({ active }) => {
           />
         </a>
 
+        <h3 className="text-xl font-semibold tracking-wide">RAJU SHRESTHA</h3>
         {/* Hamburger Menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -109,7 +117,7 @@ const Sidebar = ({ active }) => {
               onClick={(e) => {
                 e.preventDefault();
                 handleScroll(section);
-                setIsOpen(false); 
+                setIsOpen(false);
               }}
               className={`px-4 py-2 rounded cursor-pointer transition-colors ${
                 active.toUpperCase() === section

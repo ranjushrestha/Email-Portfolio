@@ -48,7 +48,8 @@ const About = ({ data = aboutData }) => {
   return (
     <div className="mt-10 px-4 lg:mt-4 lg:ml-8">
       {/* Heading */}
-      <h2 className="text-4xl sm:text-7xl text-gray-700 font-semibold text-center sm:text-left">
+      <h2 className="hidden sm:block lg:block text-4xl sm:text-7xl text-gray-700 font-semibold text-center sm:text-left">
+        {" "}
         {data.name}
       </h2>
 
@@ -67,9 +68,7 @@ const About = ({ data = aboutData }) => {
       <div className="mt-10 space-y-4">
         {data.infoSections.map((section, index) => (
           <div key={index}>
-            <h3 className=" text-gray-500 font-semibold">
-              {section.title}
-            </h3>
+            <h3 className=" text-gray-500 font-semibold">{section.title}</h3>
 
             <ul className="list-disc ml-6 mt-2 text-gray-500">
               {section.description.map((text, i) => (

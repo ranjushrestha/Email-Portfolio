@@ -54,11 +54,11 @@ const Skills = () => {
             key={index}
             className="bg-white border-t-4 border-gray-600 w-full min-h-[12rem] rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 ease-in-out p-3"
           >
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <h3 className="text-lg font-semibold text-gray-600 mb-3">
               {section.title}
             </h3>
 
-            <ul className="text-sm text-gray-600 p-2  bg-gray-200 rounded space-y-1">
+            <ul className="text-sm text-gray-500 p-2  bg-gray-200 rounded space-y-1">
               {section.description.map((item, i) => (
                 <li key={i} className="flex gap-2">
                   <span>-</span>

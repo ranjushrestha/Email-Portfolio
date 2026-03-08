@@ -36,7 +36,7 @@ const Services = () => {
 
   return (
     <div className="mt-10 px-4 lg:mt-4 lg:ml-8">
-      <h2 className="text-4xl lg:text-5xl font-semibold mb-5  text-center sm:text-left">
+      <h2 className="text-4xl lg:text-5xl font-semibold mb-5 text-gray-900 text-center sm:text-left">
         SERVICES
       </h2>
 
@@ -51,8 +51,8 @@ const Services = () => {
               alt={`${card.title} favicon`}
               className="w-6 h-6 mb-3"
             />
-            <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-700 text-sm w-full break-words">{card.text}</p>
+            <h3 className="text-lg text-gray-600 font-semibold mb-2">{card.title}</h3>
+            <p className="text-gray-500 text-sm w-full break-words">{card.text}</p>
           </div>
         ))}
       </div>

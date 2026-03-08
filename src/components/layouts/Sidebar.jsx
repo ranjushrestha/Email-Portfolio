@@ -13,7 +13,7 @@ const Sidebar = ({ active }) => {
   return (
     <>
       {/* Large Screen Sidebar */}
-      <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-70 bg-gray-700 text-white p-5 flex-col pt-4">
+      <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-68 bg-gray-700 text-white p-5 flex-col pt-4">
         <div className="flex flex-col items-center mt-12 text-center">
           <a
             href="#about"

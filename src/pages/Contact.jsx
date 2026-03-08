@@ -82,10 +82,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="mt-10 px-4 sm:px-6 lg:px-20 flex justify-center sm:justify-start">
+    <div className="mt-10 px-4 lg:mt-4 flex justify-center sm:justify-start">
       <div className="w-full lg:w-auto max-w-full">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-5 text-gray-600 text-center sm:text-left w-full">
-          Let's Work Together
+        <h2 className="text-4xl lg:text-5xl font-semibold mb-5 text-gray-900 text-center sm:text-left w-full">
+          LET'S WORK TOGETHER
         </h2>
         <p className="font-semibold mb-15 text-gray-500 text-center sm:text-left">
           Ready to scale your outreach and generate qualified leads on autopilot?

@@ -43,7 +43,7 @@ const ScrollSpy = () => {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">
       <Sidebar active={active} />
-      <div className="flex-1 bg-gray-100 lg:ml-70">
+      <div className="flex-1 bg-gray-100 lg:ml-68">
         <main className="grow overflow-auto">
           <section id="about" className="min-h-screen p-8">
             <About />

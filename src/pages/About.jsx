@@ -31,15 +31,15 @@ const aboutData = {
 
 const About = ({ data = aboutData }) => {
   return (
-    <div className="mt-10 px-4 sm:px-6 lg:px-20">
+    <div className="mt-10 px-4 lg:mt-4">
       {/* Heading */}
-      <h2 className="text-3xl sm:text-5xl text-gray-600 font-bold mb-6 text-center sm:text-left">
+      <h2 className="text-4xl sm:text-7xl text-gray-900 font-semibold text-center sm:text-left">
         {data.name}
       </h2>
 
       {/* Intro paragraph */}
-      <p className="pt-4 font-semibold text-base text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
-        <span>{data.location}.</span>
+      <p className="pt-2 font-semibold text-base text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
+        <span>{data.location} . </span>
         <a
           href={`mailto:${data.email}`}
           className="text-amber-900 text-base hover:underline"

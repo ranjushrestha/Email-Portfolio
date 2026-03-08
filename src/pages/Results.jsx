@@ -50,9 +50,9 @@ const Results = () => {
   }, []);
 
   return (
-    <div className="mt-10 px-4 sm:px-6 lg:px-20">
-      <h2 className="text-4xl font-bold mb-5 text-gray-600 text-center sm:text-left sm:text-5xl">
-        Results That Matter
+    <div className="mt-10 px-4 lg:mt-4  ">
+      <h2 className="text-4xl font-semibold mb-5 text-gray-900 text-center sm:text-left sm:text-5xl">
+        RESULTS THAT MATTER
       </h2>
 
       <p className="font-semibold mb-10 text-gray-500 text-center sm:text-left">
@@ -74,7 +74,7 @@ const Results = () => {
               alt={`${card.title} icon`}
               className="w-10 h-10 mb-3"
             />
-            <h3 className="text-2xl font-semibold mb-2 lg:text-4xl lg:font-bold">
+            <h3 className="text-2xl font-semibold mb-2 lg:text-3xl lg:font-bold">
               {card.title}
             </h3>
             <p className="text-gray-700 font-semibold text-center break-words">

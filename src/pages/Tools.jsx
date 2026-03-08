@@ -10,9 +10,9 @@ const Tools = () => {
   const titles = ['Instantly', 'Smartlead', 'Lemlist', 'Google Workspace', 'Microsoft 365'];
 
   return (
-    <div className="mt-10 px-4 sm:px-6 lg:px-20">
-      <h2 className="text-4xl sm:text-5xl text-gray-600 font-bold mb-3 text-center">
-        Tools and Platforms
+    <div className="mt-10 px-4 lg:mt-4 ">
+      <h2 className="text-4xl sm:text-5xl text-gray-900 font-semibold mb-3 text-center">
+        TOOLS AND PLATFORMS
       </h2>
       <p className="font-semibold text-gray-500 text-center mb-10">
         Expert proficiency in industry-leading email outreach platforms

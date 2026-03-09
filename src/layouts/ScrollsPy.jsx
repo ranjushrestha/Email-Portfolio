@@ -23,7 +23,7 @@ const ScrollSpy = () => {
   },
   {
     threshold: 0,
-    rootMargin: "-35% 0px -65% 0px" //
+    rootMargin: "-35% 0px -65% 0px" 
   }
 );
 

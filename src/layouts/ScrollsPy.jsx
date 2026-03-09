@@ -12,62 +12,80 @@ import Contact from "../pages/Contact";
 const sections = ["about", "skills", "tools", "services", "results", "contact"];
 
 const ScrollSpy = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("about");
 
-  useEffect(() => {
-    const isMobile = window.innerWidth < 1024; // lg breakpoint
+useEffect(() => {
+  let ticking = false;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: isMobile ? "-20% 0px -20% 0px" : "0px",
-        threshold: isMobile ? 0 : 0.5,
-      },
-    );
+  const handleScroll = () => {
+    if (ticking) return;
+    ticking = true;
 
-    sections.forEach((section) => {
-      const el = document.getElementById(section);
-      if (el) observer.observe(el);
+    requestAnimationFrame(() => {
+      const scrollPos = window.scrollY + window.innerHeight * 0.35;
+
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+
+      if (nearBottom) {
+        setActive(sections[sections.length - 1]);
+        ticking = false;
+        return;
+      }
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && scrollPos >= el.getBoundingClientRect().top + window.scrollY) {
+          setActive(sections[i]);
+          break;
+        }
+      }
+
+      ticking = false;
     });
+  };
 
-    return () => observer.disconnect();
-  }, []);
+  window.addEventListener("scroll", handleScroll, { passive: true }); // passive for perf
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">
       <Sidebar active={active} />
-      <div className="flex-1 bg-gray-80 lg:ml-68">
-        <main className="grow overflow-auto">
-          <section id="about" className="min-h-screen  border-b border-gray-200 py-8">
+
+      <div className="flex-1 bg-gray-100 lg:ml-64">
+        <main>
+          <section id="about" className="min-h-screen border-b border-gray-200 py-8">
             <About />
           </section>
+
           <section id="skills" className="min-h-screen border-b border-gray-200 py-8">
             <Skills />
           </section>
+
           <section id="tools" className="min-h-screen border-b border-gray-200 bg-white py-8">
             <Tools />
           </section>
-          <section id="services" className="min-h-screen border-b border-gray-200  py-8">
+
+          <section id="services" className="min-h-screen border-b border-gray-200 py-8">
             <Services />
           </section>
+
           <section id="results" className="min-h-screen border-b border-gray-200 py-8">
             <Results />
           </section>
-          <section id="contact" className="min-h-screen  py-8">
+
+          <section id="contact" className="min-h-screen py-8">
             <Contact />
           </section>
         </main>
+
         <Footer />
       </div>
     </div>
   );
 };
 
-export default ScrollSpy; 
+export default ScrollSpy;

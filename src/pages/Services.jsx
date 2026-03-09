@@ -44,7 +44,7 @@ const Services = () => {
         {cardsData.map((card, index) => (
           <div
             key={index}
-            className="bg-[#d1d5db] rounded-2xl border border-gray-500 p-4 flex flex-col w-full hover:shadow-xl transition"
+            className=" bg-gray-300/50 rounded-2xl border border-gray-500 p-4 flex flex-col w-full hover:shadow-xl transition"
           >
             <img
               src={card.icon}

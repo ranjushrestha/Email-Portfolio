@@ -15,12 +15,12 @@ const ScrollSpy = () => {
   const [active, setActive] = useState("");
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 1024; // lg breakpoint
+    const isMobile = window.innerWidth < 1024;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
             setActive(entry.target.id);
           }
         });
@@ -28,7 +28,7 @@ const ScrollSpy = () => {
       {
         root: null,
         rootMargin: isMobile ? "-20% 0px -20% 0px" : "0px",
-        threshold: isMobile ? 0 : 0.5,
+        threshold: [0.3, 0.5, 0.7],
       },
     );
 
@@ -43,31 +43,52 @@ const ScrollSpy = () => {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">
       <Sidebar active={active} />
-      <div className="flex-1 bg-gray-100 lg:ml-68">
-        <main className="grow ">
-          <section id="about" className="min-h-screen  border-b border-gray-200 py-8">
+      <div className="flex-1 bg-gray-100 lg:ml-64">
+        <main className="grow">
+          <section
+            id="about"
+            className="min-h-screen border-b border-gray-200 py-8"
+          >
             <About />
           </section>
-          <section id="skills" className="min-h-screen border-b border-gray-200 py-8">
+
+          <section
+            id="skills"
+            className="min-h-screen border-b border-gray-200 py-8"
+          >
             <Skills />
           </section>
-          <section id="tools" className="min-h-screen border-b border-gray-200 bg-white py-8">
+
+          <section
+            id="tools"
+            className="min-h-screen border-b border-gray-200 bg-white py-8"
+          >
             <Tools />
           </section>
-          <section id="services" className="min-h-screen border-b border-gray-200  py-8">
+
+          <section
+            id="services"
+            className="min-h-screen border-b border-gray-200 py-8"
+          >
             <Services />
           </section>
-          <section id="results" className="min-h-screen border-b border-gray-200 py-8">
+
+          <section
+            id="results"
+            className="min-h-screen border-b border-gray-200 py-8"
+          >
             <Results />
           </section>
-          <section id="contact" className="min-h-screen  py-8">
+
+          <section id="contact" className="min-h-screen py-8">
             <Contact />
           </section>
         </main>
+
         <Footer />
       </div>
     </div>
   );
 };
 
-export default ScrollSpy;  
+export default ScrollSpy;

@@ -15,14 +15,17 @@ const ScrollSpy = () => {
   const [active, setActive] = useState("about");
 
  useEffect(() => {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    },
-    { threshold: 0.30 }
-  );
+ const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  },
+  {
+    threshold: 0,
+    rootMargin: "-35% 0px -65% 0px" //
+  }
+);
 
   sections.forEach(id => {
     const el = document.getElementById(id);

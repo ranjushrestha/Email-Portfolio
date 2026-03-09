@@ -44,7 +44,7 @@ const Skills = () => {
 
   return (
     <div className="mt-10 px-4 lg:mt-4 lg:ml-8">
-      <h2 className="text-4xl sm:text-5xl text-gray-700 font-semibold mb-10">
+      <h2 className="text-4xl sm:text-5xl text-gray-700 text-center sm:text-left font-semibold mb-10">
         SKILLS
       </h2>
 

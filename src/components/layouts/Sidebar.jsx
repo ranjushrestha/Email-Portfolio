@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import profile from "../../assets/profile.png";
+import profile from "../../assets/profile.jpeg";
 
 const Sidebar = ({ active }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ const Sidebar = ({ active }) => {
             <img
               src={profile}
               alt="logo"
-              className="w-40 h-40 object-cover rounded-full mb-1 border-4 border-gray-400 shadow-md"
+              className="w-40  h-40 object-cover rounded-full mb-1 border-4 border-gray-400 shadow-md"
             />
           </a>
         </div>

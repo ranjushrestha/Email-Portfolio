@@ -3,10 +3,12 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
+
 }
 
 body, p, span, a, li, input, button {
   font-family:  sans-serif;
+  
 }
 
 /* in global CSS */

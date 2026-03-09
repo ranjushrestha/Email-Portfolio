@@ -48,7 +48,7 @@ const About = ({ data = aboutData }) => {
   return (
     <div className="mt-10 px-4 lg:mt-4 lg:ml-8">
       {/* Heading */}
-      <h2 className="hidden  sm:block sm:block lg:block text-4xl sm:text-7xl text-gray-700 font-semibold text-center sm:text-left lg:text-left">
+      <h2 className="hidden  sm:block sm:block lg:block text-4xl sm:text-6xl lg:text-7xl text-gray-700 font-semibold text-center sm:text-left lg:text-left">
         {" "}
         {data.name}
       </h2>
@@ -65,12 +65,12 @@ const About = ({ data = aboutData }) => {
       </p>
 
       {/* Info Sections */}
-      <div className="mt-6 ">
+      <div className="mt-5 ">
         {data.infoSections.map((section, index) => (
           <div key={index}>
             <h3 className=" text-gray-500 font-semibold">{section.title}</h3>
 
-            <ul className="list-disc ml-6 mt-2  text-gray-500">
+            <ul className="list-disc ml-6 mt-1 text-sm text-gray-500">
               {section.description.map((text, i) => (
                 <li key={i}>{text}</li>
               ))}

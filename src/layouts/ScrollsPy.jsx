@@ -44,7 +44,7 @@ const ScrollSpy = () => {
     <div className="flex flex-col lg:flex-row min-h-screen">
       <Sidebar active={active} />
       <div className="flex-1 bg-gray-80 lg:ml-68">
-        <main className="grow ">
+        <main className="grow overflow-auto">
           <section id="about" className="min-h-screen  border-b border-gray-200 py-8">
             <About />
           </section>
@@ -70,4 +70,4 @@ const ScrollSpy = () => {
   );
 };
 
-export default ScrollSpy;  
+export default ScrollSpy; 

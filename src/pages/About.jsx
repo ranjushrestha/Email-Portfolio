@@ -54,23 +54,23 @@ const About = ({ data = aboutData }) => {
       </h2>
 
       {/* Intro */}
-      <p className="pt-2 font-semibold text-base text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
+      <p className="pt-2 font-semibold text-sm text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
         <span>{data.location} .</span>
         <a
           href={`mailto:${data.email}`}
-          className="text-amber-900 text-base hover:underline"
+          className="text-amber-900 text-sm hover:underline"
         >
           {data.email.toUpperCase()}
         </a>
       </p>
 
       {/* Info Sections */}
-      <div className="mt-10 space-y-4">
+      <div className="mt-6 ">
         {data.infoSections.map((section, index) => (
           <div key={index}>
             <h3 className=" text-gray-500 font-semibold">{section.title}</h3>
 
-            <ul className="list-disc ml-6 mt-2 text-gray-500">
+            <ul className="list-disc ml-6 mt-2  text-gray-500">
               {section.description.map((text, i) => (
                 <li key={i}>{text}</li>
               ))}

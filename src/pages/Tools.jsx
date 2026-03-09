@@ -17,11 +17,11 @@ import n8n from "../assets/n8n.png";
 
 const Tools = () => {
   const tools = [
-    { src: instantly, title: "Instantly" },
-    { src: smartlead, title: "Smartlead" },
-    { src: lemlist, title: "Lemlist" },
-    { src: googleWorkspace, title: "Google Workspace" },
-    { src: M365, title: "Microsoft 365" },
+    { src: instantly, title: "" },
+    { src: smartlead, title: "" },
+    { src: lemlist, title: "" },
+    { src: googleWorkspace, title: " " },
+    { src: M365, title: " " },
     { src: sendGrid, title: "" },
     { src: mailChimp, title: "" },
     { src: hubSpot, title: "" },
@@ -48,7 +48,7 @@ const Tools = () => {
         {tools.map((tool, index) => (
           <div key={index} className="flex flex-col items-center inline-flex">
             {/* Circular Image */}
-            <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden inline-flex items-center justify-center hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="w-26 h-26 overflow-hidden inline-flex items-center justify-center hover:scale-105 transition-transform duration-300 ease-in-out">
               <img
                 src={tool.src}
                 alt={tool.title}

@@ -51,10 +51,10 @@ const ScrollSpy = () => {
           <section id="skills" className="min-h-screen border-b border-gray-200 py-8">
             <Skills />
           </section>
-          <section id="tools" className="min-h-screen border-b  bg-white py-8">
+          <section id="tools" className="min-h-screen border-b border-gray-200 bg-white py-8">
             <Tools />
           </section>
-          <section id="services" className="min-h-screen border-b   py-8">
+          <section id="services" className="min-h-screen border-b border-gray-200  py-8">
             <Services />
           </section>
           <section id="results" className="min-h-screen border-b border-gray-200 py-8">

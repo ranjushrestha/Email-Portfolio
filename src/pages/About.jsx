@@ -54,7 +54,7 @@ const About = ({ data = aboutData }) => {
       </h2>
 
       {/* Intro */}
-      <p className="pt-2 font-semibold text-sm text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
+      <p className="pt-2 font-semibold text-base text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
         <span>{data.location} .</span>
         <a
           href={`mailto:${data.email}`}

@@ -14,42 +14,44 @@ const sections = ["about", "skills", "tools", "services", "results", "contact"];
 const ScrollSpy = () => {
   const [active, setActive] = useState("about");
 
-useEffect(() => {
-  let ticking = false;
+  useEffect(() => {
+    let ticking = false;
 
-  const handleScroll = () => {
-    if (ticking) return;
-    ticking = true;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
 
-    requestAnimationFrame(() => {
-      const scrollPos = window.scrollY + window.innerHeight * 0.35;
+      requestAnimationFrame(() => {
+        const scrollPos = window.scrollY + window.innerHeight * 0.35;
 
-      const nearBottom =
-        window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
+        const nearBottom =
+          window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
 
-      if (nearBottom) {
-        setActive(sections[sections.length - 1]);
-        ticking = false;
-        return;
-      }
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && scrollPos >= el.getBoundingClientRect().top + window.scrollY) {
-          setActive(sections[i]);
-          break;
+        if (nearBottom) {
+          setActive(prev =>
+            prev !== sections[sections.length - 1] ? sections[sections.length - 1] : prev
+          );
+          ticking = false;
+          return;
         }
-      }
 
-      ticking = false;
-    });
-  };
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const el = document.getElementById(sections[i]);
+          if (el && scrollPos >= el.getBoundingClientRect().top + window.scrollY) {
+            setActive(prev => (prev !== sections[i] ? sections[i] : prev));
+            break;
+          }
+        }
 
-  window.addEventListener("scroll", handleScroll, { passive: true }); // passive for perf
-  handleScroll();
+        ticking = false;
+      });
+    };
 
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); 
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">

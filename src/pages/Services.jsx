@@ -52,7 +52,7 @@ const Services = () => {
               className="w-6 h-6 mb-3"
             />
             <h3 className="text-lg text-gray-600 font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-500 text-sm w-full break-words">{card.text}</p>
+            <p className="text-gray-500 text-base lg:text-sm w-full break-words">{card.text}</p>
           </div>
         ))}
       </div>

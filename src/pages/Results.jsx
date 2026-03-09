@@ -77,7 +77,7 @@ const Results = () => {
             <h3 className="text-xl text-gray-600  font-semibold mb-2 lg:text-3xl lg:font-bold">
               {card.title}
             </h3>
-            <p className="text-gray-500 font-semibold  text-sm text-center break-words">
+            <p className="text-gray-500 font-semibold   text-center break-words">
               {card.text}
             </p>
           </div>

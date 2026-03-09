@@ -58,7 +58,7 @@ const Skills = () => {
               {section.title}
             </h3>
 
-            <ul className="text-sm text-gray-500 p-2  bg-gray-200 rounded space-y-1">
+            <ul className="text-base lg:text-sm text-gray-500 p-2  bg-gray-200 rounded space-y-1">
               {section.description.map((item, i) => (
                 <li key={i} className="flex  gap-2">
                   <span>-</span>

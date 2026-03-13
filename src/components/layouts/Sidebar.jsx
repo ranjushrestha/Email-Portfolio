@@ -53,7 +53,7 @@ const Sidebar = ({ active }) => {
                   : "hover:bg-gray-500/30"
               }`}
             >
-              <p className="font-bold">{section}</p>
+              <p className="font-bold md:text-base 2xl:text-lg transition-[font-size] duration-300">{section}</p>
             </a>
           ))}
         </nav>

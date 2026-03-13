@@ -74,10 +74,10 @@ const Results = () => {
               alt={`${card.title} icon`}
               className="w-10 h-10 mb-3"
             />
-            <h3 className="text-xl text-gray-600  font-semibold mb-2 lg:text-3xl lg:font-bold">
+            <h3 className="text-xl text-gray-600 2xl:text-xl  font-semibold mb-2 lg:text-3xl lg:font-bold">
               {card.title}
             </h3>
-            <p className="text-gray-500 font-semibold   text-center break-words">
+            <p className="text-gray-500 font-semibold 2xl:text-xl  text-center break-words">
               {card.text}
             </p>
           </div>

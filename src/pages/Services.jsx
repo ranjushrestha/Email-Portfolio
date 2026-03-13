@@ -51,8 +51,8 @@ const Services = () => {
               alt={`${card.title} favicon`}
               className="w-6 h-6 mb-3"
             />
-            <h3 className="text-lg text-gray-600 font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-500 text-base lg:text-sm w-full break-words">{card.text}</p>
+            <h3 className="text-lg 2xl:text-2xl text-gray-600 font-semibold mb-2">{card.title}</h3>
+            <p className="text-gray-500 text-base lg:text-sm w-full 2xl:text-xl break-words">{card.text}</p>
           </div>
         ))}
       </div>

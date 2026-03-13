@@ -39,7 +39,7 @@ const Tools = () => {
       <h2 className="text-4xl sm:text-5xl text-gray-700 font-semibold mb-3 text-center">
         TOOLS AND PLATFORMS
       </h2>
-      <p className="font-semibold text-gray-500 text-center mb-10">
+      <p className="font-semibold text-gray-500  text-center mb-10">
         Expert proficiency in industry-leading email outreach platforms
       </p>
 

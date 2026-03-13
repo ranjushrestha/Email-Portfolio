@@ -116,7 +116,7 @@ const ContactForm = () => {
             placeholder="Full Name"
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full p-2 border-b-2 text-sm border-gray-400 focus:border-gray-600 outline-none"
+            className="w-full p-2 border-b-2 text-sm 2xl:text-xl border-gray-400 focus:border-gray-600 outline-none"
           />
           {errors.fullName && (
             <p className="text-red-500 text-xs">{errors.fullName}</p>
@@ -128,7 +128,7 @@ const ContactForm = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border-b-2 text-sm border-gray-400 focus:border-gray-600 outline-none"
+            className="w-full p-2 border-b-2 text-sm 2xl:text-xl border-gray-400 focus:border-gray-600 outline-none"
           />
           {errors.email && (
             <p className="text-red-500 text-xs">{errors.email}</p>
@@ -139,7 +139,7 @@ const ContactForm = () => {
             placeholder="Message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full p-2 border-b-2 text-sm border-gray-400 focus:border-gray-600 outline-none resize-none h-32"
+            className="w-full p-2 border-b-2 text-sm 2xl:text-xl border-gray-400 focus:border-gray-600 outline-none resize-none h-32"
           />
           {errors.message && (
             <p className="text-red-500 text-xs">{errors.message}</p>
@@ -148,7 +148,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={sending}
-            className="w-full min-w-[200px] bg-gray-600 text-white p-3 rounded-2xl hover:bg-gray-700 disabled:opacity-50 flex items-center justify-center"
+            className="w-full min-w-[200px] 2xl:text-xl bg-gray-600 text-white p-3 rounded-2xl hover:bg-gray-700 disabled:opacity-50 flex items-center justify-center"
           >
             {sending ? "Sending… Please wait" : "Let's Scale Your Outreach"}
           </button>

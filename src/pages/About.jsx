@@ -48,13 +48,13 @@ const About = ({ data = aboutData }) => {
   return (
     <div className="mt-10 px-4 lg:mt-4 lg:ml-8">
       {/* Heading */}
-      <h2 className="hidden  sm:block sm:block lg:block text-4xl sm:text-6xl lg:text-7xl text-gray-700 font-semibold text-center sm:text-left lg:text-left">
+      <h2 className="hidden  sm:block  lg:block text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl text-gray-700 font-semibold text-center sm:text-left lg:text-left">
         {" "}
         {data.name}
       </h2>
 
       {/* Intro */}
-      <p className="pt-2 font-semibold text-base text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
+      <p className="pt-2 font-semibold text-base 2xl:text-2xl text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
         <span>{data.location} .</span>
         <a
           href={`mailto:${data.email}`}
@@ -68,10 +68,9 @@ const About = ({ data = aboutData }) => {
       <div className="mt-5 ">
         {data.infoSections.map((section, index) => (
           <div key={index}>
-            <h3 className=" text-gray-500 font-semibold">{section.title}</h3>
+            <h3 className=" text-gray-500 2xl:text-xl font-semibold">{section.title}</h3>
 
-            <ul className="list-disc ml-6 mt-1  text-base lg:text-sm text-gray-500">
-              {section.description.map((text, i) => (
+<ul className="list-disc ml-6 mt-1 text-base sm:text-base md:text-lg lg:text-sm 2xl:text-2xl text-gray-500">              {section.description.map((text, i) => (
                 <li key={i}>{text}</li>
               ))}
             </ul>

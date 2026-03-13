@@ -70,7 +70,7 @@ const About = ({ data = aboutData }) => {
           <div key={index}>
             <h3 className=" text-gray-500 2xl:text-xl font-semibold">{section.title}</h3>
 
-<ul className="list-disc ml-6 mt-1 text-base sm:text-base md:text-lg lg:text-sm 2xl:text-2xl text-gray-500">              {section.description.map((text, i) => (
+<ul className="list-disc ml-6 mt-1 text-base sm:text-base md:text-lg lg:text-sm 2xl:text-xl text-gray-500">              {section.description.map((text, i) => (
                 <li key={i}>{text}</li>
               ))}
             </ul>

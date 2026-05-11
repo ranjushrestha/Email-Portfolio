@@ -56,12 +56,7 @@ const About = ({ data = aboutData }) => {
       {/* Intro */}
       <p className="pt-2 font-semibold text-base 2xl:text-2xl text-gray-500 max-w-2xl flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1">
         <span>{data.location} .</span>
-        <a
-          href={`mailto:${data.email}`}
-          className="text-amber-900 text-sm hover:underline"
-        >
-          {data.email.toUpperCase()}
-        </a>
+        
       </p>
 
       {/* Info Sections */}

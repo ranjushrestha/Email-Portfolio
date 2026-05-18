@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import profile from "../../assets/profile.jpeg";
+import profile from "../../assets/profile.png";
 
 const Sidebar = ({ active }) => {
   const [isOpen, setIsOpen] = useState(false);
